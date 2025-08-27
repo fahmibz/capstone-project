@@ -35,3 +35,15 @@ Tujuan dari website ini adalah sebagai sarana promosi digital yang profesional, 
 1. Clone repositori ini:
    ```bash
    git clone https://github.com/username/company-profile-dark.git
+   buka folder projet nya
+   buka file Index.html di browser
+
+---
+
+## 🤖 AI Support Explanation
+Project ini dibuat dengan bantuan AI (IBM Granite) dalam:
+- **Merancang struktur website.
+- **Menentukan desain dark theme dengan UI modern & responsif. 
+- **Menambahkan animasi interaktif dengan JavaScript. 
+
+---
