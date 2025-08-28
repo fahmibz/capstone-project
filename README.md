@@ -9,10 +9,11 @@ Tujuan dari website ini adalah sebagai sarana promosi digital yang profesional, 
 ---
 
 ## 🛠️ Technologies Used
-- **HTML5** → struktur website.  
-- **Tailwind CSS** → styling modern & responsive.  
-- **JavaScript (Vanilla)** → animasi, interaktivitas, dan navbar hamburger.  .  
+- **HTML5** struktur website.  
+- **Tailwind CSS** styling modern & responsive.  
+- **JavaScript (Vanilla)** animasi, interaktivitas, dan navbar hamburger.  .  
 - **Unsplash**  gambar produk (burger, ayam, kentang goreng, fastfood).  
+- **AOS.js → Animasi scroll (fade, zoom). 
 
 ---
 
