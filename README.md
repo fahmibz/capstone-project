@@ -1,4 +1,4 @@
-# 🍔 Company Profile Website - Dark Theme
+# 🍔 Company Profile Website - King Fried Chicken
 
 ## 📌 Description
 Website company profile modern dan elegan dengan **dark theme** yang dibuat menggunakan **HTML, Tailwind CSS, dan JavaScript**.  
@@ -37,6 +37,16 @@ Tujuan dari website ini adalah sebagai sarana promosi digital yang profesional, 
    git clone https://github.com/username/company-profile-dark.git
    buka folder projet nya
    buka file Index.html di browser
+```bash
+   git clone https://github.com/username/company-profile-dark.git
+   buka folder projet nya
+   buka file Index.html di browser
+```
+```bash
+   git clone https://github.com/username/company-profile-dark.git
+   buka folder projet nya
+   buka file Index.html di browser
+```
 
 ---
 
