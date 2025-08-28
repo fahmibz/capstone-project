@@ -32,7 +32,6 @@ Tujuan dari website ini adalah sebagai sarana promosi digital yang profesional, 
 ---
 
 ## ⚙️ Setup Instructions
-1. Clone repositori ini:
 ```bash
    git clone https://github.com/username/company-profile-dark.git
 ```
