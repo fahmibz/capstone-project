@@ -33,18 +33,13 @@ Tujuan dari website ini adalah sebagai sarana promosi digital yang profesional, 
 
 ## ⚙️ Setup Instructions
 1. Clone repositori ini:
-   ```bash
-   git clone https://github.com/username/company-profile-dark.git
-   buka folder projet nya
-   buka file Index.html di browser
 ```bash
    git clone https://github.com/username/company-profile-dark.git
-   buka folder projet nya
-   buka file Index.html di browser
 ```
 ```bash
-   git clone https://github.com/username/company-profile-dark.git
    buka folder projet nya
+```
+```bash
    buka file Index.html di browser
 ```
 
