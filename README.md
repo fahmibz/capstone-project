@@ -47,5 +47,6 @@ Project ini dibuat dengan bantuan AI (IBM Granite) dalam:
 - **Merancang struktur website.
 - **Menentukan desain dark theme dengan UI modern & responsif. 
 - **Menambahkan animasi interaktif dengan JavaScript. 
+- **Menyediakan gambar relevan dari Unsplash.
 
 ---
