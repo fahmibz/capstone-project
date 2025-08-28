@@ -2,7 +2,7 @@
 
 ## 📌 Description
 Website company profile modern dan elegan dengan **dark theme** yang dibuat menggunakan **HTML, Tailwind CSS, dan JavaScript**.  
-Website ini dirancang untuk menampilkan profil perusahaan makanan cepat saji (burger, ayam crispy, kentang goreng, dll), dengan animasi interaktif, galeri produk, informasi kontak, dan sebaran lokasi cabang melalui peta interaktif.  
+Website ini dirancang untuk menampilkan profil perusahaan makanan cepat saji (King Fried Chicken) dengan beberapa menu seperti burger, ayam crispy, kentang goreng, dll, dengan animasi interaktif, galeri produk, informasi kontak.  
 
 Tujuan dari website ini adalah sebagai sarana promosi digital yang profesional, responsif, dan mudah dikembangkan lebih lanjut.
 
@@ -11,9 +11,8 @@ Tujuan dari website ini adalah sebagai sarana promosi digital yang profesional, 
 ## 🛠️ Technologies Used
 - **HTML5** → struktur website.  
 - **Tailwind CSS** → styling modern & responsive.  
-- **JavaScript (Vanilla)** → animasi, interaktivitas, dan navbar hamburger.  
-- **Leaflet.js** → peta interaktif sebaran lokasi penjualan.  
-- **Unsplash** → gambar produk (burger, ayam, kentang goreng, fastfood).  
+- **JavaScript (Vanilla)** → animasi, interaktivitas, dan navbar hamburger.  .  
+- **Unsplash**  gambar produk (burger, ayam, kentang goreng, fastfood).  
 
 ---
 
