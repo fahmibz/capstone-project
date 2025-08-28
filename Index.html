@@ -1,183 +1,334 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Company Profile - King Fried Chicken</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>King Fried Chicken — Company Profile</title>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+
+  <!-- Meta color -->
+  <meta name="theme-color" content="#111827"/>
+  <style>
+    /* helper: glass overlay */
+    .glass {
+      background: rgba(17, 24, 39, 0.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-gray-200">
+<body class="bg-gray-900 text-gray-100 font-display">
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 border-b border-gray-800/70 glass">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <!-- Brand -->
+        <a href="#home" class="flex items-center gap-3">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-rose-500 text-white font-bold">K</span>
+          <span class="text-lg font-semibold tracking-wide">King Fried Chicken</span>
+        </a>
 
-<!-- Navbar -->
-<header class="bg-gray-900 text-white fixed w-full z-50 shadow-lg">
-  <div class="container mx-auto flex justify-between items-center px-6 py-4">
-    <h1 class="text-2xl font-bold text-rose-500">King Fried Chicken</h1>
+        <!-- Desktop menu -->
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a href="#home" class="hover:text-rose-400 transition">Home</a>
+          <a href="#profil" class="hover:text-rose-400 transition">Profil</a>
+          <a href="#menu" class="hover:text-rose-400 transition">Menu</a>
+          <a href="#galeri" class="hover:text-rose-400 transition">Galeri</a>
+          <a href="#kontak" class="hover:text-rose-400 transition">Kontak</a>
+        </nav>
 
-    <!-- Menu Desktop -->
-    <nav class="hidden md:flex space-x-8">
-      <a href="#home" class="hover:text-rose-500 transition">Home</a>
-      <a href="#about" class="hover:text-rose-500 transition">Profile</a>
-      <a href="#produk" class="hover:text-rose-500 transition">Produk</a>
-      <a href="#galeri" class="hover:text-rose-500 transition">Galeri</a>
-      <a href="#kontak" class="hover:text-rose-500 transition">Kontak</a>
-    </nav>
+        <!-- Mobile hamburger -->
+        <button id="hamburger" class="md:hidden inline-flex items-center justify-center rounded-xl p-2 hover:bg-gray-800 transition" aria-label="Buka menu">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
 
-    <!-- Hamburger Button Mobile -->
-    <button id="menu-btn" class="md:hidden focus:outline-none">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
-  </div>
+      <!-- Mobile dropdown -->
+      <div id="mobileMenu" class="hidden md:hidden pb-4">
+        <nav class="mt-2 space-y-2 text-sm">
+          <a href="#home" class="block rounded-lg px-3 py-2 hover:bg-gray-800">Home</a>
+          <a href="#profil" class="block rounded-lg px-3 py-2 hover:bg-gray-800">Profil</a>
+          <a href="#menu" class="block rounded-lg px-3 py-2 hover:bg-gray-800">Menu</a>
+          <a href="#galeri" class="block rounded-lg px-3 py-2 hover:bg-gray-800">Galeri</a>
+          <a href="#kontak" class="block rounded-lg px-3 py-2 hover:bg-gray-800">Kontak</a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-  <!-- Menu Mobile -->
-  <nav id="menu" class="hidden md:hidden bg-gray-800 px-6 py-4 space-y-4">
-    <a href="#home" class="block hover:text-rose-500">Home</a>
-    <a href="#about" class="block hover:text-rose-500">Profile</a>
-    <a href="#produk" class="block hover:text-rose-500">Produk</a>
-    <a href="#galeri" class="block hover:text-rose-500">Galeri</a>
-    <a href="#kontak" class="block hover:text-rose-500">Kontak</a>
-  </nav>
-</header>
-  <!-- Hero Section -->
-  <section class="h-screen flex items-center justify-center text-center px-6 bg-[url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092')] bg-cover bg-center relative">
-    <div class="absolute inset-0 bg-black/70"></div>
-    <div class="relative z-10" data-aos="fade-up">
-      <h2 class="text-4xl md:text-6xl font-extrabold text-white">Selamat Datang di King Fried Chicken</h2>
-      <p class="mt-4 text-lg text-gray-300">Rasakan sensasi ayam crispy dengan cita rasa khas</p>
-      <a href="#produk" class="mt-6 inline-block px-6 py-3 bg-rose-500 hover:bg-rose-600 text-white rounded-full shadow-lg transition">Lihat Produk</a>
+  <!-- HERO -->
+  <section id="home" class="relative min-h-[88vh] flex items-center">
+    <!-- Background hero image + overlay -->
+    <img
+      src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1920&q=80"
+      alt="Burger background"
+      class="absolute inset-0 h-full w-full object-cover opacity-30"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-gray-900/80 to-gray-900"></div>
+
+    <div class="relative mx-auto max-w-7xl px-6 py-24 sm:py-32">
+      <div class="max-w-3xl" data-aos="fade-up">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+          Selamat Datang di <span class="text-rose-500">King Fried Chicken</span>
+        </h1>
+        <p class="mt-4 text-lg text-gray-300">
+          Rasakan sensasi ayam crispy dengan cita rasa khas
+        </p>
+        <div class="mt-8">
+          <a href="#menu" class="inline-flex items-center rounded-2xl bg-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-rose-500/20 hover:bg-rose-400 active:scale-[.98] transition">
+            Lihat Produk
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Profil Perusahaan -->
-  <section id="profil" class="py-20 container mx-auto px-6">
-    <h3 class="text-3xl font-bold text-center text-rose-500 mb-10">Profil Perusahaan</h3>
-    <div class="md:flex items-center gap-10">
-      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Profil Perusahaan" class="rounded-2xl shadow-lg md:w-1/2" data-aos="fade-right">
-      <p class="mt-6 md:mt-0 md:w-1/2 text-gray-300 leading-relaxed" data-aos="fade-left">
-        King Fried Chicken<br>
-
-King Fried Chicken didirikan dengan satu tujuan untuk menyajikan ayam goreng krispi terbaik yang bisa dinikmati oleh semua orang. Berawal dari semangat untuk menciptakan hidangan ayam yang luar biasa, kami terus mengembangkan resep rahasia yang menghasilkan tekstur krispi di luar dan daging yang juicy di dalam.
-
-<br>Kami percaya bahwa kualitas adalah kunci. Semua hidangan kami dibuat dari bahan-bahan pilihan, mulai dari ayam segar hingga bumbu rempah berkualitas tinggi. Selain ayam goreng krispi, menu kami juga mencakup variasi makanan cepat saji yang populer, seperti King Burger yang berisi daging ayam krispi tebal, kentang goreng renyah, dan pilihan minuman yang menyegarkan.
-
-Visi kami adalah menjadi pilihan utama bagi keluarga dan teman-teman yang mencari tempat makan yang nyaman dan menyenangkan. Kami berkomitmen untuk mempertahankan standar kualitas dan kebersihan tertinggi di setiap aspek operasional kami. Dengan pelayanan yang ramah dan cepat, kami ingin memastikan setiap kunjungan ke King Fried Chicken adalah pengalaman yang tak terlupakan.
-
-
-      </p>
+  <!-- PROFIL PERUSAHAAN -->
+  <section id="profil" class="py-20 bg-gray-900">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right">
+          <h2 class="text-3xl sm:text-4xl font-bold">Profil Perusahaan</h2>
+          <p class="mt-4 text-gray-300 leading-relaxed">
+            King Fried Chicken berdiri dengan visi menghadirkan <em>ayam goreng krispi</em> terbaik dengan
+            <strong>bumbu rahasia</strong> yang meresap hingga ke dalam. Kami hanya menggunakan
+            <strong>bahan berkualitas</strong> dan proses pengolahan higienis untuk memastikan setiap gigitan
+            nikmat, gurih, dan konsisten. Dengan pelayanan cepat dan ramah, kami siap menjadi pilihan utama
+            makanan cepat saji keluarga Indonesia—praktis, lezat, dan terjangkau.
+          </p>
+          <div class="mt-6 flex gap-3 text-sm">
+            <span class="inline-flex items-center rounded-full bg-gray-800 px-3 py-1">Crispy & Juicy</span>
+            <span class="inline-flex items-center rounded-full bg-gray-800 px-3 py-1">Bumbu Rahasia</span>
+            <span class="inline-flex items-center rounded-full bg-gray-800 px-3 py-1">Bahan Berkualitas</span>
+          </div>
+        </div>
+        <div class="relative" data-aos="fade-left">
+          <img
+            src="https://images.unsplash.com/photo-1606755962773-0c3ce9c16a2a?auto=format&fit=crop&w=1200&q=80"
+            alt="Ayam goreng krispi"
+            class="rounded-3xl shadow-2xl shadow-black/40 ring-1 ring-white/10"
+            loading="lazy"
+          />
+          <div class="absolute -bottom-5 -left-5 hidden sm:block rounded-2xl bg-rose-500/20 px-4 py-2 text-sm text-rose-200 ring-1 ring-rose-500/30">
+            Bumbu rahasia sejak 2025
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-<!-- Produk -->
-<section id="produk" class="py-20 bg-gray-800">
-  <div class="container mx-auto px-6 text-center">
-    <h3 class="text-3xl font-bold text-rose-500 mb-10">Menu Terbaik</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <!-- Burger -->
-      <div class="bg-gray-900 rounded-2xl shadow-lg p-6 hover:scale-105 transition" data-aos="zoom-in">
-        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" 
-             alt="Burger" class="rounded-lg mb-4 w-full h-48 object-cover">
-        <h4 class="text-xl font-semibold mb-2 text-white">Burger Spesial</h4>
-        <p class="text-gray-400 mb-2">Burger juicy dengan daging sapi premium, keju leleh, dan saus rahasia.</p>
-        <span class="text-rose-500 font-bold text-lg">Rp 35.000</span>
+  <!-- MENU TERBAIK -->
+  <section id="menu" class="py-20 bg-gray-950">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-3xl sm:text-4xl font-bold" data-aos="fade-up">Menu Terbaik</h2>
+        <p class="text-sm text-gray-400" data-aos="fade-up" data-aos-delay="50">Harga terjangkau, rasa memanjakan lidah.</p>
       </div>
 
-      <!-- Ayam Crispy -->
-      <div class="bg-gray-900 rounded-2xl shadow-lg p-6 hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="200">
-        <img src="img/ayam.jpg" 
-             alt="Ayam Crispy" class="rounded-lg mb-4 w-full h-48 object-cover">
-        <h4 class="text-xl font-semibold mb-2 text-white">Ayam Crispy</h4>
-        <p class="text-gray-400 mb-2">Ayam goreng renyah berlapis tepung khas dengan rasa gurih dan juicy.</p>
-        <span class="text-rose-500 font-bold text-lg">Rp 28.000</span>
-      </div>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Card: Ayam Crispy -->
+        <article class="group rounded-3xl bg-gray-900 ring-1 ring-white/10 overflow-hidden hover:ring-rose-500/40 transition" data-aos="zoom-in">
+          <img src="/img/ayam.jpg" alt="Ayam Crispy"
+               class="h-52 w-full object-cover group-hover:scale-105 transition duration-500" loading="lazy"/>
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Ayam Crispy</h3>
+            <p class="mt-2 text-sm text-gray-300">Ayam goreng renyah dengan bumbu khas yang meresap hingga ke dalam.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="font-bold text-rose-400">Rp 18.000</span>
+              <button class="rounded-xl bg-gray-800 px-3 py-1 text-xs hover:bg-gray-700">Detail</button>
+            </div>
+          </div>
+        </article>
 
-      <!-- Kentang Goreng -->
-      <div class="bg-gray-900 rounded-2xl shadow-lg p-6 hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="400">
-        <img src="img/kentang.jpg" 
-             alt="Kentang Goreng" class="rounded-lg mb-4 w-full h-48 object-cover">
-        <h4 class="text-xl font-semibold mb-2 text-white">Kentang Goreng</h4>
-        <p class="text-gray-400 mb-2">Kentang goreng gurih yang renyah di luar, lembut di dalam, cocok untuk camilan.</p>
-        <span class="text-rose-500 font-bold text-lg">Rp 18.000</span>
-      </div>
-      <div class="bg-gray-900 rounded-2xl shadow-lg p-6 hover:scale-105 transition" data-aos="zoom-in">
-        <img src="img/hotdog.jpg" 
-             alt="Burger" class="rounded-lg mb-4 w-full h-48 object-cover">
-        <h4 class="text-xl font-semibold mb-2 text-white">Hot Dog</h4>
-        <p class="text-gray-400 mb-2">Hot dog dengan sosis premium, keju leleh, dan saus rahasia.</p>
-        <span class="text-rose-500 font-bold text-lg">Rp 35.000</span>
-      </div>
+        <!-- Card: Burger Spesial -->
+        <article class="group rounded-3xl bg-gray-900 ring-1 ring-white/10 overflow-hidden hover:ring-rose-500/40 transition" data-aos="zoom-in" data-aos-delay="50">
+          <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1200&q=80" alt="Burger Spesial"
+               class="h-52 w-full object-cover group-hover:scale-105 transition duration-500" loading="lazy"/>
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Burger Spesial</h3>
+            <p class="mt-2 text-sm text-gray-300">Patty juicy, daging sapi premium, sayur segar, dan saus rahasia.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="font-bold text-rose-400">Rp 25.000</span>
+              <button class="rounded-xl bg-gray-800 px-3 py-1 text-xs hover:bg-gray-700">Detail</button>
+            </div>
+          </div>
+        </article>
 
-      <!-- Ayam Crispy -->
-      <div class="bg-gray-900 rounded-2xl shadow-lg p-6 hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="200">
-        <img src="img/paket a.jpg" 
-             alt="Ayam Crispy" class="rounded-lg mb-4 w-full h-48 object-cover">
-        <h4 class="text-xl font-semibold mb-2 text-white">Paket Bareng Teman</h4>
-        <p class="text-gray-400 mb-2">Ayam goreng renyah berlapis tepung khas dengan rasa gurih dan juicy.</p>
-        <span class="text-rose-500 font-bold text-lg">Rp 100.000</span>
+        <!-- Card: Kentang Goreng -->
+        <article class="group rounded-3xl bg-gray-900 ring-1 ring-white/10 overflow-hidden hover:ring-rose-500/40 transition" data-aos="zoom-in" data-aos-delay="100">
+          <img src="/img/kentang.jpg" alt="Kentang Goreng"
+               class="h-52 w-full object-cover group-hover:scale-105 transition duration-500" loading="lazy"/>
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Kentang Goreng</h3>
+            <p class="mt-2 text-sm text-gray-300">Irisan kentang pilihan, garing di luar lembut di dalam.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="font-bold text-rose-400">Rp 12.000</span>
+              <button class="rounded-xl bg-gray-800 px-3 py-1 text-xs hover:bg-gray-700">Detail</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Hot Dog -->
+        <article class="group rounded-3xl bg-gray-900 ring-1 ring-white/10 overflow-hidden hover:ring-rose-500/40 transition" data-aos="zoom-in">
+          <img src="/img/hotdog.jpg" alt="Hot Dog"
+               class="h-52 w-full object-cover group-hover:scale-105 transition duration-500" loading="lazy"/>
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Hot Dog</h3>
+            <p class="mt-2 text-sm text-gray-300">Sosis pilihan dengan roti lembut, topping saus & mustard.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="font-bold text-rose-400">Rp 20.000</span>
+              <button class="rounded-xl bg-gray-800 px-3 py-1 text-xs hover:bg-gray-700">Detail</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Paket Hemat -->
+        <article class="group rounded-3xl bg-gray-900 ring-1 ring-white/10 overflow-hidden hover:ring-rose-500/40 transition" data-aos="zoom-in" data-aos-delay="50">
+          <img src="/img/paket a.jpg" alt="Paket Hemat"
+               class="h-52 w-full object-cover group-hover:scale-105 transition duration-500" loading="lazy"/>
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Paket Hemat</h3>
+            <p class="mt-2 text-sm text-gray-300">Udang Crispy + saos. Pilihan paling laris untuk sehari-hari.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="font-bold text-rose-400">Rp 50.000</span>
+              <button class="rounded-xl bg-gray-800 px-3 py-1 text-xs hover:bg-gray-700">Detail</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Wings Pedas -->
+        <article class="group rounded-3xl bg-gray-900 ring-1 ring-white/10 overflow-hidden hover:ring-rose-500/40 transition" data-aos="zoom-in" data-aos-delay="100">
+          <img src="/img/paket b.jpg" alt="Wings Pedas"
+               class="h-52 w-full object-cover group-hover:scale-105 transition duration-500" loading="lazy"/>
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Paket 3 Ayam</h3>
+            <p class="mt-2 text-sm text-gray-300">Sayap ayam dengan saus pedas manis bikin nagih.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="font-bold text-rose-400">Rp 100.000</span>
+              <button class="rounded-xl bg-gray-800 px-3 py-1 text-xs hover:bg-gray-700">Detail</button>
+            </div>
+          </div>
+        </article>
       </div>
-
-      <!-- Kentang Goreng -->
-      <div class="bg-gray-900 rounded-2xl shadow-lg p-6 hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="400">
-        <img src="img/paket b.jpg" 
-             alt="Kentang Goreng" class="rounded-lg mb-4 w-full h-48 object-cover">
-        <h4 class="text-xl font-semibold mb-2 text-white">Paket 3 Ayam</h4>
-        <p class="text-gray-400 mb-2">Ayam goreng renyah berlapis tepung khas dengan rasa gurih dan juicy.</p>
-        <span class="text-rose-500 font-bold text-lg">Rp 120.000</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-  <!-- Galeri -->
-  <section id="galeri" class="py-20 container mx-auto px-6">
-    <h3 class="text-3xl font-bold text-center text-rose-500 mb-10">Galeri Menu</h3>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up">
-      <img src="img/ayam.jpg" alt="Ayam Goreng" class="rounded-xl shadow-lg w-full h-48 object-cover">
-      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Burger" class="rounded-xl shadow-lg w-full h-48 object-cover">
-      <img src="img/kentang.jpg" alt="Kentang Goreng" class="rounded-xl shadow-lg w-full h-48 object-cover">
-      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Makanan Cepat Saji" class="rounded-xl shadow-lg w-full h-48 object-cover">
     </div>
   </section>
 
-  <!-- Kontak -->
-  <section id="kontak" class="py-20 bg-gray-800">
-    <div class="container mx-auto px-6 text-center">
-      <h3 class="text-3xl font-bold text-rose-500 mb-10">Hubungi Kami</h3>
-      <p class="mb-6 text-gray-300">Ada pertanyaan atau ingin pesan? Hubungi kami!</p>
-      <form class="max-w-lg mx-auto space-y-4" data-aos="fade-up">
-        <input type="text" placeholder="Nama" class="w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:border-rose-500">
-        <input type="email" placeholder="Email" class="w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:border-rose-500">
-        <textarea placeholder="Pesan" rows="4" class="w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:border-rose-500"></textarea>
-        <button class="px-6 py-3 bg-rose-500 hover:bg-rose-600 text-white rounded-full shadow-lg transition">Kirim Pesan</button>
-      </form>
+  <!-- GALERI -->
+  <section id="galeri" class="py-20 bg-gray-900">
+    <div class="mx-auto max-w-7xl px-6">
+      <h2 class="text-3xl sm:text-4xl font-bold" data-aos="fade-up">Galeri</h2>
+      <p class="mt-2 text-gray-400" data-aos="fade-up" data-aos-delay="50">Kumpulan foto menu favorit pelanggan.</p>
+
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <img data-aos="fade-up" src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80" alt="Burger"
+             class="h-40 w-full object-cover rounded-xl ring-1 ring-white/10"/>
+        <img data-aos="fade-up" data-aos-delay="50" src="/img/ayam.jpg" alt="Ayam Goreng"
+             class="h-40 w-full object-cover rounded-xl ring-1 ring-white/10"/>
+        <img data-aos="fade-up" data-aos-delay="100" src="/img/kentang.jpg" alt="Kentang Goreng"
+             class="h-40 w-full object-cover rounded-xl ring-1 ring-white/10"/>
+        <img data-aos="fade-up" data-aos-delay="150" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80" alt="Hot Dog"
+             class="h-40 w-full object-cover rounded-xl ring-1 ring-white/10"/>
+        <img data-aos="fade-up" src="/img/hotdog.jpg" alt="Wings"
+             class="h-40 w-full object-cover rounded-xl ring-1 ring-white/10"/>
+        <img data-aos="fade-up" data-aos-delay="50" src="/img/paket b.jpg" alt="Paket"
+             class="h-40 w-full object-cover rounded-xl ring-1 ring-white/10"/>
+        <img data-aos="fade-up" data-aos-delay="100" src="/img/paket a.jpg" alt="Burger Lain"
+             class="h-40 w-full object-cover rounded-xl ring-1 ring-white/10"/>
+        <img data-aos="fade-up" data-aos-delay="150" src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80" alt="Chicken Sandwich"
+             class="h-40 w-full object-cover rounded-xl ring-1 ring-white/10"/>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-950 py-6 text-center text-gray-500 text-sm">
-    &copy; Copyright 2025 King Fried Chicken. All Right Reserved.
+  <!-- KONTAK -->
+  <section id="kontak" class="py-20 bg-gray-950">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div data-aos="fade-right">
+          <h2 class="text-3xl sm:text-4xl font-bold">Kontak</h2>
+          <p class="mt-3 text-gray-300">
+            Ada pertanyaan atau ingin pesan? <span class="text-rose-400">Hubungi kami!</span>
+          </p>
+          <div class="mt-6 space-y-2 text-sm text-gray-300">
+            <p><strong>Outlet Pusat:</strong> Jl. Contoh No. 123, Surabaya</p>
+            <p><strong>Telepon/WA:</strong> 08xx-xxxx-xxxx</p>
+            <p><strong>Email:</strong> halo@kingfriedchicken.id</p>
+            <p class="text-gray-400">Jam operasional: 10.00 – 22.00 WIB</p>
+          </div>
+        </div>
+
+        <!-- Form sederhana -->
+        <form class="rounded-3xl bg-gray-900 p-6 ring-1 ring-white/10" data-aos="fade-left">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs text-gray-400 mb-1">Nama</label>
+              <input type="text" placeholder="Nama lengkap" class="w-full rounded-xl bg-gray-800 border border-gray-700 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"/>
+            </div>
+            <div>
+              <label class="block text-xs text-gray-400 mb-1">Email</label>
+              <input type="email" placeholder="email@domain.com" class="w-full rounded-xl bg-gray-800 border border-gray-700 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"/>
+            </div>
+          </div>
+          <div class="mt-4">
+            <label class="block text-xs text-gray-400 mb-1">Pesan</label>
+            <textarea rows="4" placeholder="Tulis pesan Anda…" class="w-full rounded-xl bg-gray-800 border border-gray-700 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"></textarea>
+          </div>
+          <button type="button" class="mt-5 inline-flex items-center rounded-2xl bg-rose-500 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-rose-500/20 hover:bg-rose-400 active:scale-[.98] transition">
+            Kirim Pesan
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-800 bg-gray-900">
+    <div class="mx-auto max-w-7xl px-6 py-8 text-center text-sm text-gray-400">
+      © Copyright 2025 King Fried Chicken. All Right Reserved.
+    </div>
   </footer>
 
-  <!-- AOS Script -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
+    // Init AOS
     AOS.init({
-      duration: 1000,
       once: true,
+      duration: 700,
+      easing: 'ease-out-quart',
+      offset: 80,
     });
 
-    <!-- Script Toggle -->
-  const btn = document.getElementById('menu-btn');
-  const menu = document.getElementById('menu');
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
 
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
+    // Auto-close mobile menu ketika klik link
+    mobileMenu?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
   </script>
 </body>
 </html>
