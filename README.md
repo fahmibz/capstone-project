@@ -24,8 +24,7 @@ Tujuan dari website ini adalah sebagai sarana promosi digital yang profesional, 
 - **About Us** → profil perusahaan singkat.  
 - **Produk Andalan** → card menu dengan gambar, deskripsi, dan harga.  
 - **Galeri** → showcase produk dengan grid layout.  
-- **Kontak Perusahaan** → informasi alamat, telepon, email, dan social media.  
-- **Sebaran Lokasi Penjualan** → peta interaktif dengan marker cabang.  
+- **Kontak Perusahaan** → informasi alamat, telepon, email, dan social media.   
 - **Smooth Animation** → transisi elegan saat scroll & hover.  
 
 ---
